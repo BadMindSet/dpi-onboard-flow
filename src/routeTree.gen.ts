@@ -11,8 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as DocumentsRouteImport } from './routes/documents'
 import { Route as KycRouteImport } from './routes/kyc'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as NotificationsRouteImport } from './routes/notifications'
+import { Route as PaperlessRouteImport } from './routes/paperless'
+import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as RegisterRouteImport } from './routes/register'
 import { Route as EsignIndexRouteImport } from './routes/esign.index'
 import { Route as EsignReviewRouteImport } from './routes/esign.review'
@@ -34,6 +38,11 @@ const DashboardRoute = DashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DocumentsRoute = DocumentsRouteImport.update({
+  id: '/documents',
+  path: '/documents',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KycRoute = KycRouteImport.update({
   id: '/kyc',
   path: '/kyc',
@@ -42,6 +51,21 @@ const KycRoute = KycRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotificationsRoute = NotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaperlessRoute = PaperlessRouteImport.update({
+  id: '/paperless',
+  path: '/paperless',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RegisterRoute = RegisterRouteImport.update({
@@ -98,8 +122,12 @@ const OnboardingReviewRoute = OnboardingReviewRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
+  '/documents': typeof DocumentsRoute
   '/kyc': typeof KycRoute
   '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/paperless': typeof PaperlessRoute
+  '/profile': typeof ProfileRoute
   '/register': typeof RegisterRoute
   '/esign/review': typeof EsignReviewRoute
   '/onboarding/address': typeof OnboardingAddressRoute
@@ -114,8 +142,12 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
+  '/documents': typeof DocumentsRoute
   '/kyc': typeof KycRoute
   '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/paperless': typeof PaperlessRoute
+  '/profile': typeof ProfileRoute
   '/register': typeof RegisterRoute
   '/esign/review': typeof EsignReviewRoute
   '/onboarding/address': typeof OnboardingAddressRoute
@@ -131,8 +163,12 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
+  '/documents': typeof DocumentsRoute
   '/kyc': typeof KycRoute
   '/login': typeof LoginRoute
+  '/notifications': typeof NotificationsRoute
+  '/paperless': typeof PaperlessRoute
+  '/profile': typeof ProfileRoute
   '/register': typeof RegisterRoute
   '/esign/review': typeof EsignReviewRoute
   '/onboarding/address': typeof OnboardingAddressRoute
@@ -149,8 +185,12 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/dashboard'
+    | '/documents'
     | '/kyc'
     | '/login'
+    | '/notifications'
+    | '/paperless'
+    | '/profile'
     | '/register'
     | '/esign/review'
     | '/onboarding/address'
@@ -165,8 +205,12 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/dashboard'
+    | '/documents'
     | '/kyc'
     | '/login'
+    | '/notifications'
+    | '/paperless'
+    | '/profile'
     | '/register'
     | '/esign/review'
     | '/onboarding/address'
@@ -181,8 +225,12 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/dashboard'
+    | '/documents'
     | '/kyc'
     | '/login'
+    | '/notifications'
+    | '/paperless'
+    | '/profile'
     | '/register'
     | '/esign/review'
     | '/onboarding/address'
@@ -198,8 +246,12 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DashboardRoute: typeof DashboardRoute
+  DocumentsRoute: typeof DocumentsRoute
   KycRoute: typeof KycRoute
   LoginRoute: typeof LoginRoute
+  NotificationsRoute: typeof NotificationsRoute
+  PaperlessRoute: typeof PaperlessRoute
+  ProfileRoute: typeof ProfileRoute
   RegisterRoute: typeof RegisterRoute
   EsignReviewRoute: typeof EsignReviewRoute
   OnboardingAddressRoute: typeof OnboardingAddressRoute
@@ -228,6 +280,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/documents': {
+      id: '/documents'
+      path: '/documents'
+      fullPath: '/documents'
+      preLoaderRoute: typeof DocumentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kyc': {
       id: '/kyc'
       path: '/kyc'
@@ -240,6 +299,27 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notifications': {
+      id: '/notifications'
+      path: '/notifications'
+      fullPath: '/notifications'
+      preLoaderRoute: typeof NotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/paperless': {
+      id: '/paperless'
+      path: '/paperless'
+      fullPath: '/paperless'
+      preLoaderRoute: typeof PaperlessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/register': {
@@ -318,8 +398,12 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DashboardRoute: DashboardRoute,
+  DocumentsRoute: DocumentsRoute,
   KycRoute: KycRoute,
   LoginRoute: LoginRoute,
+  NotificationsRoute: NotificationsRoute,
+  PaperlessRoute: PaperlessRoute,
+  ProfileRoute: ProfileRoute,
   RegisterRoute: RegisterRoute,
   EsignReviewRoute: EsignReviewRoute,
   OnboardingAddressRoute: OnboardingAddressRoute,
