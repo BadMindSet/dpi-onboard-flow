@@ -10,33 +10,206 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as KycRouteImport } from './routes/kyc'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as EsignIndexRouteImport } from './routes/esign.index'
+import { Route as EsignReviewRouteImport } from './routes/esign.review'
+import { Route as OnboardingIndexRouteImport } from './routes/onboarding.index'
+import { Route as OnboardingAddressRouteImport } from './routes/onboarding.address'
+import { Route as OnboardingContactRouteImport } from './routes/onboarding.contact'
+import { Route as OnboardingDocumentsRouteImport } from './routes/onboarding.documents'
+import { Route as OnboardingIdentityRouteImport } from './routes/onboarding.identity'
+import { Route as OnboardingPersonalRouteImport } from './routes/onboarding.personal'
+import { Route as OnboardingReviewRouteImport } from './routes/onboarding.review'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KycRoute = KycRouteImport.update({
+  id: '/kyc',
+  path: '/kyc',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsignIndexRoute = EsignIndexRouteImport.update({
+  id: '/esign/',
+  path: '/esign/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsignReviewRoute = EsignReviewRouteImport.update({
+  id: '/esign/review',
+  path: '/esign/review',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingIndexRoute = OnboardingIndexRouteImport.update({
+  id: '/onboarding/',
+  path: '/onboarding/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingAddressRoute = OnboardingAddressRouteImport.update({
+  id: '/onboarding/address',
+  path: '/onboarding/address',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingContactRoute = OnboardingContactRouteImport.update({
+  id: '/onboarding/contact',
+  path: '/onboarding/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingDocumentsRoute = OnboardingDocumentsRouteImport.update({
+  id: '/onboarding/documents',
+  path: '/onboarding/documents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingIdentityRoute = OnboardingIdentityRouteImport.update({
+  id: '/onboarding/identity',
+  path: '/onboarding/identity',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingPersonalRoute = OnboardingPersonalRouteImport.update({
+  id: '/onboarding/personal',
+  path: '/onboarding/personal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingReviewRoute = OnboardingReviewRouteImport.update({
+  id: '/onboarding/review',
+  path: '/onboarding/review',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/dashboard': typeof DashboardRoute
+  '/kyc': typeof KycRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
+  '/esign/review': typeof EsignReviewRoute
+  '/onboarding/address': typeof OnboardingAddressRoute
+  '/onboarding/contact': typeof OnboardingContactRoute
+  '/onboarding/documents': typeof OnboardingDocumentsRoute
+  '/onboarding/identity': typeof OnboardingIdentityRoute
+  '/onboarding/personal': typeof OnboardingPersonalRoute
+  '/onboarding/review': typeof OnboardingReviewRoute
+  '/esign/': typeof EsignIndexRoute
+  '/onboarding/': typeof OnboardingIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/dashboard': typeof DashboardRoute
+  '/kyc': typeof KycRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
+  '/esign/review': typeof EsignReviewRoute
+  '/onboarding/address': typeof OnboardingAddressRoute
+  '/onboarding/contact': typeof OnboardingContactRoute
+  '/onboarding/documents': typeof OnboardingDocumentsRoute
+  '/onboarding/identity': typeof OnboardingIdentityRoute
+  '/onboarding/personal': typeof OnboardingPersonalRoute
+  '/onboarding/review': typeof OnboardingReviewRoute
+  '/esign': typeof EsignIndexRoute
+  '/onboarding': typeof OnboardingIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/dashboard': typeof DashboardRoute
+  '/kyc': typeof KycRoute
+  '/login': typeof LoginRoute
+  '/register': typeof RegisterRoute
+  '/esign/review': typeof EsignReviewRoute
+  '/onboarding/address': typeof OnboardingAddressRoute
+  '/onboarding/contact': typeof OnboardingContactRoute
+  '/onboarding/documents': typeof OnboardingDocumentsRoute
+  '/onboarding/identity': typeof OnboardingIdentityRoute
+  '/onboarding/personal': typeof OnboardingPersonalRoute
+  '/onboarding/review': typeof OnboardingReviewRoute
+  '/esign/': typeof EsignIndexRoute
+  '/onboarding/': typeof OnboardingIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/dashboard'
+    | '/kyc'
+    | '/login'
+    | '/register'
+    | '/esign/review'
+    | '/onboarding/address'
+    | '/onboarding/contact'
+    | '/onboarding/documents'
+    | '/onboarding/identity'
+    | '/onboarding/personal'
+    | '/onboarding/review'
+    | '/esign/'
+    | '/onboarding/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/dashboard'
+    | '/kyc'
+    | '/login'
+    | '/register'
+    | '/esign/review'
+    | '/onboarding/address'
+    | '/onboarding/contact'
+    | '/onboarding/documents'
+    | '/onboarding/identity'
+    | '/onboarding/personal'
+    | '/onboarding/review'
+    | '/esign'
+    | '/onboarding'
+  id:
+    | '__root__'
+    | '/'
+    | '/dashboard'
+    | '/kyc'
+    | '/login'
+    | '/register'
+    | '/esign/review'
+    | '/onboarding/address'
+    | '/onboarding/contact'
+    | '/onboarding/documents'
+    | '/onboarding/identity'
+    | '/onboarding/personal'
+    | '/onboarding/review'
+    | '/esign/'
+    | '/onboarding/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DashboardRoute: typeof DashboardRoute
+  KycRoute: typeof KycRoute
+  LoginRoute: typeof LoginRoute
+  RegisterRoute: typeof RegisterRoute
+  EsignReviewRoute: typeof EsignReviewRoute
+  OnboardingAddressRoute: typeof OnboardingAddressRoute
+  OnboardingContactRoute: typeof OnboardingContactRoute
+  OnboardingDocumentsRoute: typeof OnboardingDocumentsRoute
+  OnboardingIdentityRoute: typeof OnboardingIdentityRoute
+  OnboardingPersonalRoute: typeof OnboardingPersonalRoute
+  OnboardingReviewRoute: typeof OnboardingReviewRoute
+  EsignIndexRoute: typeof EsignIndexRoute
+  OnboardingIndexRoute: typeof OnboardingIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +221,115 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kyc': {
+      id: '/kyc'
+      path: '/kyc'
+      fullPath: '/kyc'
+      preLoaderRoute: typeof KycRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/esign/': {
+      id: '/esign/'
+      path: '/esign'
+      fullPath: '/esign/'
+      preLoaderRoute: typeof EsignIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/esign/review': {
+      id: '/esign/review'
+      path: '/esign/review'
+      fullPath: '/esign/review'
+      preLoaderRoute: typeof EsignReviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding/': {
+      id: '/onboarding/'
+      path: '/onboarding'
+      fullPath: '/onboarding/'
+      preLoaderRoute: typeof OnboardingIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding/address': {
+      id: '/onboarding/address'
+      path: '/onboarding/address'
+      fullPath: '/onboarding/address'
+      preLoaderRoute: typeof OnboardingAddressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding/contact': {
+      id: '/onboarding/contact'
+      path: '/onboarding/contact'
+      fullPath: '/onboarding/contact'
+      preLoaderRoute: typeof OnboardingContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding/documents': {
+      id: '/onboarding/documents'
+      path: '/onboarding/documents'
+      fullPath: '/onboarding/documents'
+      preLoaderRoute: typeof OnboardingDocumentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding/identity': {
+      id: '/onboarding/identity'
+      path: '/onboarding/identity'
+      fullPath: '/onboarding/identity'
+      preLoaderRoute: typeof OnboardingIdentityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding/personal': {
+      id: '/onboarding/personal'
+      path: '/onboarding/personal'
+      fullPath: '/onboarding/personal'
+      preLoaderRoute: typeof OnboardingPersonalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding/review': {
+      id: '/onboarding/review'
+      path: '/onboarding/review'
+      fullPath: '/onboarding/review'
+      preLoaderRoute: typeof OnboardingReviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DashboardRoute: DashboardRoute,
+  KycRoute: KycRoute,
+  LoginRoute: LoginRoute,
+  RegisterRoute: RegisterRoute,
+  EsignReviewRoute: EsignReviewRoute,
+  OnboardingAddressRoute: OnboardingAddressRoute,
+  OnboardingContactRoute: OnboardingContactRoute,
+  OnboardingDocumentsRoute: OnboardingDocumentsRoute,
+  OnboardingIdentityRoute: OnboardingIdentityRoute,
+  OnboardingPersonalRoute: OnboardingPersonalRoute,
+  OnboardingReviewRoute: OnboardingReviewRoute,
+  EsignIndexRoute: EsignIndexRoute,
+  OnboardingIndexRoute: OnboardingIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
