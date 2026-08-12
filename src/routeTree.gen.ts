@@ -18,6 +18,12 @@ import { Route as NotificationsRouteImport } from './routes/notifications'
 import { Route as PaperlessRouteImport } from './routes/paperless'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as RegisterRouteImport } from './routes/register'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as AdminAuditLogsRouteImport } from './routes/admin.audit-logs'
+import { Route as AdminEsignRouteImport } from './routes/admin.esign'
+import { Route as AdminInvestorsRouteImport } from './routes/admin.investors'
+import { Route as AdminKycRouteImport } from './routes/admin.kyc'
+import { Route as AdminPaperlessRouteImport } from './routes/admin.paperless'
 import { Route as EsignIndexRouteImport } from './routes/esign.index'
 import { Route as EsignReviewRouteImport } from './routes/esign.review'
 import { Route as OnboardingIndexRouteImport } from './routes/onboarding.index'
@@ -71,6 +77,36 @@ const ProfileRoute = ProfileRouteImport.update({
 const RegisterRoute = RegisterRouteImport.update({
   id: '/register',
   path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/admin/',
+  path: '/admin/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminAuditLogsRoute = AdminAuditLogsRouteImport.update({
+  id: '/admin/audit-logs',
+  path: '/admin/audit-logs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminEsignRoute = AdminEsignRouteImport.update({
+  id: '/admin/esign',
+  path: '/admin/esign',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminInvestorsRoute = AdminInvestorsRouteImport.update({
+  id: '/admin/investors',
+  path: '/admin/investors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminKycRoute = AdminKycRouteImport.update({
+  id: '/admin/kyc',
+  path: '/admin/kyc',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminPaperlessRoute = AdminPaperlessRouteImport.update({
+  id: '/admin/paperless',
+  path: '/admin/paperless',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EsignIndexRoute = EsignIndexRouteImport.update({
@@ -129,6 +165,11 @@ export interface FileRoutesByFullPath {
   '/paperless': typeof PaperlessRoute
   '/profile': typeof ProfileRoute
   '/register': typeof RegisterRoute
+  '/admin/audit-logs': typeof AdminAuditLogsRoute
+  '/admin/esign': typeof AdminEsignRoute
+  '/admin/investors': typeof AdminInvestorsRoute
+  '/admin/kyc': typeof AdminKycRoute
+  '/admin/paperless': typeof AdminPaperlessRoute
   '/esign/review': typeof EsignReviewRoute
   '/onboarding/address': typeof OnboardingAddressRoute
   '/onboarding/contact': typeof OnboardingContactRoute
@@ -136,6 +177,7 @@ export interface FileRoutesByFullPath {
   '/onboarding/identity': typeof OnboardingIdentityRoute
   '/onboarding/personal': typeof OnboardingPersonalRoute
   '/onboarding/review': typeof OnboardingReviewRoute
+  '/admin/': typeof AdminIndexRoute
   '/esign/': typeof EsignIndexRoute
   '/onboarding/': typeof OnboardingIndexRoute
 }
@@ -149,6 +191,11 @@ export interface FileRoutesByTo {
   '/paperless': typeof PaperlessRoute
   '/profile': typeof ProfileRoute
   '/register': typeof RegisterRoute
+  '/admin/audit-logs': typeof AdminAuditLogsRoute
+  '/admin/esign': typeof AdminEsignRoute
+  '/admin/investors': typeof AdminInvestorsRoute
+  '/admin/kyc': typeof AdminKycRoute
+  '/admin/paperless': typeof AdminPaperlessRoute
   '/esign/review': typeof EsignReviewRoute
   '/onboarding/address': typeof OnboardingAddressRoute
   '/onboarding/contact': typeof OnboardingContactRoute
@@ -156,6 +203,7 @@ export interface FileRoutesByTo {
   '/onboarding/identity': typeof OnboardingIdentityRoute
   '/onboarding/personal': typeof OnboardingPersonalRoute
   '/onboarding/review': typeof OnboardingReviewRoute
+  '/admin': typeof AdminIndexRoute
   '/esign': typeof EsignIndexRoute
   '/onboarding': typeof OnboardingIndexRoute
 }
@@ -170,6 +218,11 @@ export interface FileRoutesById {
   '/paperless': typeof PaperlessRoute
   '/profile': typeof ProfileRoute
   '/register': typeof RegisterRoute
+  '/admin/audit-logs': typeof AdminAuditLogsRoute
+  '/admin/esign': typeof AdminEsignRoute
+  '/admin/investors': typeof AdminInvestorsRoute
+  '/admin/kyc': typeof AdminKycRoute
+  '/admin/paperless': typeof AdminPaperlessRoute
   '/esign/review': typeof EsignReviewRoute
   '/onboarding/address': typeof OnboardingAddressRoute
   '/onboarding/contact': typeof OnboardingContactRoute
@@ -177,6 +230,7 @@ export interface FileRoutesById {
   '/onboarding/identity': typeof OnboardingIdentityRoute
   '/onboarding/personal': typeof OnboardingPersonalRoute
   '/onboarding/review': typeof OnboardingReviewRoute
+  '/admin/': typeof AdminIndexRoute
   '/esign/': typeof EsignIndexRoute
   '/onboarding/': typeof OnboardingIndexRoute
 }
@@ -192,6 +246,11 @@ export interface FileRouteTypes {
     | '/paperless'
     | '/profile'
     | '/register'
+    | '/admin/audit-logs'
+    | '/admin/esign'
+    | '/admin/investors'
+    | '/admin/kyc'
+    | '/admin/paperless'
     | '/esign/review'
     | '/onboarding/address'
     | '/onboarding/contact'
@@ -199,6 +258,7 @@ export interface FileRouteTypes {
     | '/onboarding/identity'
     | '/onboarding/personal'
     | '/onboarding/review'
+    | '/admin/'
     | '/esign/'
     | '/onboarding/'
   fileRoutesByTo: FileRoutesByTo
@@ -212,6 +272,11 @@ export interface FileRouteTypes {
     | '/paperless'
     | '/profile'
     | '/register'
+    | '/admin/audit-logs'
+    | '/admin/esign'
+    | '/admin/investors'
+    | '/admin/kyc'
+    | '/admin/paperless'
     | '/esign/review'
     | '/onboarding/address'
     | '/onboarding/contact'
@@ -219,6 +284,7 @@ export interface FileRouteTypes {
     | '/onboarding/identity'
     | '/onboarding/personal'
     | '/onboarding/review'
+    | '/admin'
     | '/esign'
     | '/onboarding'
   id:
@@ -232,6 +298,11 @@ export interface FileRouteTypes {
     | '/paperless'
     | '/profile'
     | '/register'
+    | '/admin/audit-logs'
+    | '/admin/esign'
+    | '/admin/investors'
+    | '/admin/kyc'
+    | '/admin/paperless'
     | '/esign/review'
     | '/onboarding/address'
     | '/onboarding/contact'
@@ -239,6 +310,7 @@ export interface FileRouteTypes {
     | '/onboarding/identity'
     | '/onboarding/personal'
     | '/onboarding/review'
+    | '/admin/'
     | '/esign/'
     | '/onboarding/'
   fileRoutesById: FileRoutesById
@@ -253,6 +325,11 @@ export interface RootRouteChildren {
   PaperlessRoute: typeof PaperlessRoute
   ProfileRoute: typeof ProfileRoute
   RegisterRoute: typeof RegisterRoute
+  AdminAuditLogsRoute: typeof AdminAuditLogsRoute
+  AdminEsignRoute: typeof AdminEsignRoute
+  AdminInvestorsRoute: typeof AdminInvestorsRoute
+  AdminKycRoute: typeof AdminKycRoute
+  AdminPaperlessRoute: typeof AdminPaperlessRoute
   EsignReviewRoute: typeof EsignReviewRoute
   OnboardingAddressRoute: typeof OnboardingAddressRoute
   OnboardingContactRoute: typeof OnboardingContactRoute
@@ -260,6 +337,7 @@ export interface RootRouteChildren {
   OnboardingIdentityRoute: typeof OnboardingIdentityRoute
   OnboardingPersonalRoute: typeof OnboardingPersonalRoute
   OnboardingReviewRoute: typeof OnboardingReviewRoute
+  AdminIndexRoute: typeof AdminIndexRoute
   EsignIndexRoute: typeof EsignIndexRoute
   OnboardingIndexRoute: typeof OnboardingIndexRoute
 }
@@ -327,6 +405,48 @@ declare module '@tanstack/react-router' {
       path: '/register'
       fullPath: '/register'
       preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/': {
+      id: '/admin/'
+      path: '/admin'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/audit-logs': {
+      id: '/admin/audit-logs'
+      path: '/admin/audit-logs'
+      fullPath: '/admin/audit-logs'
+      preLoaderRoute: typeof AdminAuditLogsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/esign': {
+      id: '/admin/esign'
+      path: '/admin/esign'
+      fullPath: '/admin/esign'
+      preLoaderRoute: typeof AdminEsignRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/investors': {
+      id: '/admin/investors'
+      path: '/admin/investors'
+      fullPath: '/admin/investors'
+      preLoaderRoute: typeof AdminInvestorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/kyc': {
+      id: '/admin/kyc'
+      path: '/admin/kyc'
+      fullPath: '/admin/kyc'
+      preLoaderRoute: typeof AdminKycRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/paperless': {
+      id: '/admin/paperless'
+      path: '/admin/paperless'
+      fullPath: '/admin/paperless'
+      preLoaderRoute: typeof AdminPaperlessRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/esign/': {
@@ -405,6 +525,11 @@ const rootRouteChildren: RootRouteChildren = {
   PaperlessRoute: PaperlessRoute,
   ProfileRoute: ProfileRoute,
   RegisterRoute: RegisterRoute,
+  AdminAuditLogsRoute: AdminAuditLogsRoute,
+  AdminEsignRoute: AdminEsignRoute,
+  AdminInvestorsRoute: AdminInvestorsRoute,
+  AdminKycRoute: AdminKycRoute,
+  AdminPaperlessRoute: AdminPaperlessRoute,
   EsignReviewRoute: EsignReviewRoute,
   OnboardingAddressRoute: OnboardingAddressRoute,
   OnboardingContactRoute: OnboardingContactRoute,
@@ -412,6 +537,7 @@ const rootRouteChildren: RootRouteChildren = {
   OnboardingIdentityRoute: OnboardingIdentityRoute,
   OnboardingPersonalRoute: OnboardingPersonalRoute,
   OnboardingReviewRoute: OnboardingReviewRoute,
+  AdminIndexRoute: AdminIndexRoute,
   EsignIndexRoute: EsignIndexRoute,
   OnboardingIndexRoute: OnboardingIndexRoute,
 }
