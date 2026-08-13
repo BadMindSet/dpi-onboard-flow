@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Paperless investor onboarding: eKYC verification, document management and demo digital signature workflow.",
+          "DPI is a digital investor onboarding platform for identity verification, document management and digital signature workflows.",
       },
     ],
   }),

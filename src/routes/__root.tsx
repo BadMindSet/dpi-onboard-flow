@@ -88,11 +88,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Paperless investor onboarding with eKYC verification, documents and digital signature.",
+          "DPI is a digital investor onboarding platform for identity verification, document management and digital signature workflows.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "DPI — Digital Investor Onboarding System" },
+      { name: "twitter:description", content: "DPI is a digital investor onboarding platform for identity verification, document management and digital signature workflows." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/281c856c767e4985d4f2fd451965f7c7/id-preview-f592bbbe--9f00f2ab-0c9d-4618-926a-9e91a189fc6e.lovable.app-1786588828299.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/281c856c767e4985d4f2fd451965f7c7/id-preview-f592bbbe--9f00f2ab-0c9d-4618-926a-9e91a189fc6e.lovable.app-1786588828299.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
