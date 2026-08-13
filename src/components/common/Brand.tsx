@@ -29,23 +29,21 @@ export function Brand({ className, inverted = false, showWordmark = true }: Bran
     <span className={cn("flex min-w-0 items-center gap-3", className)}>
       <BrandMark className={inverted ? "bg-primary-foreground text-primary" : undefined} />
       {showWordmark && (
-        <span className="flex min-w-0 flex-col leading-none">
+        <span className="flex min-w-0 flex-col leading-tight">
           <span
             className={cn(
-              "text-lg font-extrabold tracking-tight",
+              "truncate text-[15px] font-extrabold tracking-tight",
               inverted ? "text-primary-foreground" : "text-primary",
             )}
           >
-            DPI
+            Digital Investor
           </span>
           <span
             className={cn(
-              "mt-1 truncate text-[10px] font-semibold uppercase tracking-[0.14em]",
+              "truncate text-[11px] font-semibold uppercase tracking-[0.14em]",
               inverted ? "text-primary-foreground/70" : "text-muted-foreground",
             )}
           >
-            Digital Investor
-            <br />
             Onboarding System
           </span>
         </span>
